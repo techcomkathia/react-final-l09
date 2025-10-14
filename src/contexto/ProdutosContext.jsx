@@ -1,13 +1,18 @@
 import {useState, createContext} from "react";
 
+import { produtos } from "./infoProdutos";
+
 export const ProdutosContext = createContext();
 
 export function ProdutosProvider({children}) {
-    const [produtos, setProdutos] = useState([]);
+    const [listaProdutos, setListaProdutos] = useState(produtos);
 
     return (
-        <ProdutosContext.Provider value={{produtos, setProdutos}}>
+        <ProdutosContext.Provider value={{listaProdutos, setListaProdutos}}>
             {children}
         </ProdutosContext.Provider>
     );
 }
+
+
+/

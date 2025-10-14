@@ -12,6 +12,8 @@ import { ThemeProvider } from 'styled-components'
 import { temaClaro, temaEscuro } from './styles/Temas'
 // estilo global
 import { GlobalStyle } from './styles/GlobalStyle'
+import Cabecalho from './componentes/Cabecalho'
+
 
 
 
@@ -24,7 +26,8 @@ function App() {
     <>
       <ThemeProvider theme={tema}>
         <GlobalStyle />
-        <BrowserRouter>
+        <BrowserRouter>  
+          <Cabecalho/>        
           <Rotas/>
           <button onClick={alternarTema}>Alternar Tema</button>
         </BrowserRouter>

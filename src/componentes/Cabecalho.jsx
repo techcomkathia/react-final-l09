@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import BotaoTema from "./BotaoTema";
+
 
 const Container = styled.header`
   background-color: ${({ theme }) => theme.cores.cabecalho};
@@ -17,16 +17,15 @@ const Menu = styled.nav`
   }
 `;
 
-export default function Cabecalho({ alternarTema }) {
+export default function Cabecalho() {
   return (
     <Container>
       <h1>Minha Aplicação</h1>
       <Menu>
-        <Link to="/">Início</Link>
-        <Link to="/sobre">Sobre</Link>
-        <Link to="/contato">Contato</Link>
+        <Link to="/">Home</Link>
+        <Link to="/produtos">Todos os produtos</Link>
       </Menu>
-      <BotaoTema alternarTema={alternarTema} />
+     
     </Container>
   );
 }

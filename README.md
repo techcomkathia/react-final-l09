@@ -55,3 +55,4 @@ O fluxo segue uma hierarquia de invólucros, onde as funcionalidades globais sã
 | **7** | Envolver rotas com `<ThemeProvider theme={tema}>` | `src/App.jsx` |
 | **8** | Criar o roteamento com `react-router-dom` | `src/App.jsx` |
 | **9** | Criar componentes e páginas que usam o tema | `src/pages/` e `src/components/` |
+# react-final-l09

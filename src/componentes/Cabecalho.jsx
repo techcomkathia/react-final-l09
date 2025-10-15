@@ -24,6 +24,7 @@ export default function Cabecalho() {
       <Menu>
         <Link to="/">Home</Link>
         <Link to="/produtos">Todos os produtos</Link>
+        <Link to ="/carrinho">Carrinho</Link>
       </Menu>
      
     </Container>

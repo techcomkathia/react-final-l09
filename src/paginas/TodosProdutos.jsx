@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { ProdutosContext } from "../contexto/ProdutosContext";
+import { CarrinhoContexto } from "../contexto/CarrinhoContexto";
 import { DivContainer } from "../componentes/DivContainer";
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
@@ -14,13 +15,19 @@ import { Link } from "react-router-dom";
 
 export default function TodosProdutos() {
     const { listaProdutos } = useContext(ProdutosContext);
+    const { carrinho, setCarrinho } = useContext(CarrinhoContexto);
+
+     function adicionarAoCarrinho(produto){
+        setCarrinho([...carrinho, produto]);
+        alert(`O produto ${produto.titulo} foi adicionado ao carrinho`);
+    }
     return (
         <div>
             <h2>Todos os produtos</h2>
             <DivContainer>
                 {listaProdutos.map((produto)=>{
                     return(
-                        <Card style={{ width: '18rem' }}>
+                        <Card style={{ width: '18rem' }} key={produto.id}>
                             <Link to={`/produtos/${produto.id}`}>
                                 <Card.Img variant="top" src={produto.imagem} alt="" width='200'/>  
                             </Link>
@@ -30,7 +37,7 @@ export default function TodosProdutos() {
                             <Card.Text>
                             {produto.preco}
                             </Card.Text>
-                            <Button variant="primary">Adicionar ao carrinho</Button>
+                             <Button variant="primary" onClick={()=>adicionarAoCarrinho(produto)}>Adicionar ao carrinho</Button>
                         </Card.Body>
                         </Card>
                     )
